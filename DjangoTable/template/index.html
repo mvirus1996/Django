@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <style>
+            table{
+                border-radius: 7px;
+            }
+            th{
+                background-color: #81ecec;
+                border-radius: 3px;
+                vertical-align: top;
+            }    
+            td{
+                border-radius: 3px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <a href="http://127.0.0.1:8000/" style="float: right;">Logout</a>
+        {{data|safe}}
+
+        <script>
+            $(document).ready(function(){
+                $('.tables').hide();
+            })
+
+            function show(value){
+                if($('#'+value).html() == "Show")
+                    $('#'+value).html("Hide")
+                else
+                    $('#'+value).html("Show")
+                $('#table'+value).toggle(700);
+            }
+        </script>
+    </body>
+</html>

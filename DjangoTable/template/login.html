@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <style>
+            form{
+                width: 400px;
+                margin: 200px auto;
+            }
+            input{
+                width: 100%;
+                margin: 10px;
+                font-size: 14px;
+                padding: 3px;
+            }
+            button{
+                width: 100%;
+                margin: 10px;
+            }
+            div{
+                font-size: 12px;
+                padding-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="POST" action="http://127.0.0.1:8000/tables">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Passeword">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="text-danger">{{message}}</div>
+                {% endfor %}
+            {% endif %}
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </body>
+</html>

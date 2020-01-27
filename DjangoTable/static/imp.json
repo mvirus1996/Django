@@ -1,0 +1,7 @@
+{
+    "database_name": "tasks",
+    "database_username": "root",
+    "database_password": "",
+    "database_host": "localhost",
+    "database_port": 3306
+}
